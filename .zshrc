@@ -1,3 +1,9 @@
+# Zsh completion system
+autoload -U compinit && compinit
+
+# Zsh autosuggestions (must be before syntax highlighting)
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Starship prompt
 eval "$(starship init zsh)"
 
@@ -28,3 +34,6 @@ esac
 
 # Local bin
 . "$HOME/.local/bin/env"
+
+# Zsh syntax highlighting (must be loaded last)
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
