@@ -1,6 +1,10 @@
 # Zsh completion system
 autoload -U compinit && compinit
 
+# Set cache directory for oh-my-zsh plugins
+export ZSH_CACHE_DIR="${ZSH_CACHE_DIR:-$HOME/.cache/zsh}"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+
 # Zsh autosuggestions (must be before syntax highlighting)
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
