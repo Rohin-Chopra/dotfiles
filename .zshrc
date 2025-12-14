@@ -1,17 +1,24 @@
-# Zsh completion system
-autoload -U compinit && compinit
-
-# Set cache directory for oh-my-zsh plugins
+# Oh-my-zsh setup
+export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CACHE_DIR="${ZSH_CACHE_DIR:-$HOME/.cache/zsh}"
 mkdir -p "$ZSH_CACHE_DIR/completions"
 
+# Plugins
+plugins=(
+  git
+  docker
+  kubectl
+)
+
+# Load oh-my-zsh (skip theme since we use starship)
+ZSH_THEME=""
+source $ZSH/oh-my-zsh.sh
+
+# Zsh completion system
+autoload -U compinit && compinit
+
 # Zsh autosuggestions (must be before syntax highlighting)
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Oh-my-zsh plugins
-source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
-source ~/.oh-my-zsh/plugins/docker/docker.plugin.zsh
-source ~/.oh-my-zsh/plugins/kubectl/kubectl.plugin.zsh
 
 # Starship prompt
 eval "$(starship init zsh)"
