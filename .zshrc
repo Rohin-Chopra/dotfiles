@@ -4,6 +4,11 @@ autoload -U compinit && compinit
 # Zsh autosuggestions (must be before syntax highlighting)
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Oh-my-zsh plugins
+source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+source ~/.oh-my-zsh/plugins/docker/docker.plugin.zsh
+source ~/.oh-my-zsh/plugins/kubectl/kubectl.plugin.zsh
+
 # Starship prompt
 eval "$(starship init zsh)"
 
